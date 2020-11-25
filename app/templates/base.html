@@ -2,27 +2,37 @@
 <html>
 
 <head>
-    {% extends 'bootstrap/base.html'%}
-
-    <!-- Navbar block  -->
-    {% block navbar %}
-    {% include 'navbar.html' %}
-    {% endblock %}
-
-    <meta charset="utf-8">
-    {% if title %}
-    <title> {{ title }}</title>
-    {% else %}
-    <title> Welcome to the best Movie Review website </title>
-    {% endif %}
-</head>
 
 <body>
-    <!-- Content block -->
+    <div class="jumbotron">
+        {% extends 'bootstrap/base.html'%}
 
-    {% block content %}
+        <!-- Navbar block  -->
+        {% block navbar %}
+        {% include 'navbar.html' %}
+        {% endblock %}
 
-    {% endblock%}
+        <meta charset="utf-8">
+        {% if title %}
+        <title> {{ title }}</title>
+        {% else %}
+        <title> Welcome to the best Movie Review website </title>
+        {% endif %}
+
+        {% block styles%}
+        {{ super() }}
+        <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+        {% endblock %}
+        </head>
+
+        <body>
+            <!-- Content block -->
+
+            {% block content %}
+
+            {% endblock%}
+    </div>
+
 </body>
 
 </html>

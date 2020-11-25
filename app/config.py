@@ -17,7 +17,6 @@ class ProdConfig(Config):
     '''
     pass
 
-# MOVIE_API_KEY = '<8b89951fd1222f0765ac13d3d583a97d>'
 
 class DevConfig(Config):
     '''
